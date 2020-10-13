@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  color: white;
+}
+/*agrupamento*/
+body,
+input,
+button,
+textarea {
+  /* font-size: 18px;
+  line-height: 1;
+  font-weight: 400;
+  font-family: 'Nunito', sans-serif; */
+  
+  /* Agrupando as propriedades de cima. */
+  font: 400 18px/1 "Nunito, sans-serif";
+}
+
+#page-landing {
+  background: linear-gradient(329.54deg, #29b6d1 0%, #00c7c7 100%);
+  text-align: center;
+  /*altura minima */
+  min-height: 100vh;
+}
