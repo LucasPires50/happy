@@ -7,6 +7,11 @@ body {
   height: 100vh;
   color: white;
 }
+
+:root {
+    font-size:42.5%
+}
+
 /*agrupamento*/
 body,
 input,
@@ -16,14 +21,24 @@ textarea {
   line-height: 1;
   font-weight: 400;
   font-family: 'Nunito', sans-serif; */
-  
+
   /* Agrupando as propriedades de cima. */
-  font: 400 18px/1 "Nunito, sans-serif";
+  font: 400 1.8rem/1 "Nunito, sans-serif";
 }
 
-#page-landing {
-  background: linear-gradient(329.54deg, #29b6d1 0%, #00c7c7 100%);
-  text-align: center;
-  /*altura minima */
-  min-height: 100vh;
+/* animações */
+#logo {
+    animation-delay: 50ms;
+}
+.location {
+    animation-delay: 100ms;
+}
+.main h1 {
+    animation-delay: 150ms;
+}
+.visit p {
+    animation-delay: 200ms;
+}
+.visit a {
+    animation-delay: 250ms;
 }
