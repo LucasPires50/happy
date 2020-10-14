@@ -1,18 +1,34 @@
 @keyframes up {
-    /* onde vai começar */
-    from {
-        opacity: 0;
-        transform: translateY(16px);
-    }
-    /* onde vai para */
-    to {
-        opacity: 1;
-        transform: translateY(0px);
-    }
+  /* onde vai começar */
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  /* onde vai para */
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+/* animação do page-orphanages */
+@keyframes right {
+  from {
+      transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 
 .animate-up {
-    animation-name: up;
+  animation-name: up;
+  animation-duration: 300ms;
+  animation-fill-mode: backwards;
+}
+
+/* animação do page-orphanages */
+.animate-right {
+    animation-name: right;
     animation-duration: 300ms;
-    animation-fill-mode: backwards;
 }
