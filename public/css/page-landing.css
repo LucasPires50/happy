@@ -1,41 +1,112 @@
 #page-landing {
-    background: linear-gradient(329.54deg, #29b6d1 0%, #00c7c7 100%);
-    text-align: center;
-    /*altura minima */
-    min-height: 100vh;
-  
-    display: flex;
-  }
-  
+  background: linear-gradient(329.54deg, #29b6d1 0%, #00c7c7 100%);
+  text-align: center;
+  /*altura minima */
+  min-height: 100vh;
+
+  display: flex;
+
+  font-family: "Nunito", sans-serif;
+}
+
+#container {
+  /* "margin: auto" -> só consegue alinhar se o elemento anterior for "display: flex;" */
+  margin: auto;
+  /* "112rem" -> equivale a 1120px */
+  width: min(90%, 112rem);
+}
+
+/* ".visit p" ->  vá até a tag visit e pege a tag "p" */
+.location,
+h1,
+.visit p {
+  height: 16vh;
+}
+
+/* animações */
+#logo {
+  animation-delay: 50ms;
+}
+.location {
+  animation-delay: 100ms;
+}
+.main h1 {
+  animation-delay: 150ms;
+}
+.visit p {
+  animation-delay: 200ms;
+}
+.visit a {
+  width: 8rem;
+  height: 8rem;
+  background: #ffd666;
+
+  border: none;
+  border-radius: 3rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: auto;
+
+  transition: background 0.2s;
+  /* animação */
+  animation-delay: 250ms;
+}
+
+.visit a:hover {
+  background: #96feff;
+}
+/* Desktop Version */
+@media (min-width: 760px) {
+  /* imagem */
   #container {
-      /* "margin: auto" -> só consegue alinhar se o elemento anterior for "display: flex;" */
-      margin: auto;
-  
-      width: 90%;
+    padding: 5rem 2rem;
+    /* shorthand background: image repeat position / size */
+    background: url("../images/bg.svg") no-repeat 80% /
+      clamp(30rem, 54vw, 56rem);
   }
-  
-  /* ".visit p" ->  vá até a tag visit e pege a tag "p" */
-  .location, h1, .visit p {
-      height: 16vh;
+  header {
+    /* Todos os elementos do "header", vão ficar um ao lado do outro */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
-  
+  .location,
+  h1,
+  .visit p {
+    height: initial;
+    text-align: initial;
+  }
+
+  .location {
+    /* alinhar para o lado direito */
+    text-align: right;
+    font-size: 2.4rem;
+    line-height: 1.5;
+  }
+
+  main h1 {
+    font-weight: bold;
+    line-height: 0.88;
+    font-size: clamp(4rem, 8vw, 8.4rem);
+    margin: clamp(10%, 9vh, 12%) 0 4rem;
+    width: min(300px, 80%);
+  }
+
+  .visit {
+    display: flex;
+    align-items: center;
+  }
+
+  .visit p {
+    font-size: 2.4rem;
+    line-height: 1.5;
+    width: clamp(20rem, 20vw, 30rem);
+  }
+
   .visit a {
-      width: 8rem;    
-      height: 8rem;
-      background: #ffd666;
-  
-      border: none;
-      border-radius: 3rem;
-  
-      display: flex;
-      align-items: center;
-      justify-content: center;
-  
-      margin: auto;
-
-      transition: background .2s;
+    margin: initial;
   }
-
-  .visit a:hover {
-      background: #96feff;
-  }
+}
