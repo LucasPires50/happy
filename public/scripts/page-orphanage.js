@@ -1,5 +1,13 @@
+const options = {
+    dragging: false,
+    touchzoom: false,
+    doubleClickZoom: false,
+    scrollWheelZoom: false,
+    zoomControl: false
+}
+
 // create map
-const map = L.map("mapid").setView([-27.2196371,-49.6467162], 15);
+const map = L.map("mapid", options).setView([-27.2196371, -49.6467162], 15);
 
 // create and add titleLayer
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(map);
@@ -12,15 +20,29 @@ const icon = L.icon({
     popupAnchor: [170, 2]
 })
 
-const popup = L.popup({
-    closeButton: false,
-    className: 'map-popup',
-    minWidth: 240,
-    minHeight: 240
-}).setContent('Lar das meninas <a href="orphanage.html?id=1" class="choose-orphanage"> <img src="./public/images/arrow-white.svg"></a>')
-
 // create and add map
-L.marker([-27.2196371,-49.6467162], { icon })
-  .addTo(map)
-  .bindPopup(popup)
-  
+L.marker([-27.2196371, -49.6467162], {
+        icon
+    })
+    .addTo(map)
+
+// image gallery
+function selectImage(event) {
+    // "currentTarget" -. qula é o alvo atual que está disparando o evento, é o button
+    const button = event.currentTarget
+
+    // romover todas as "class=''active", de todos os butões que tiveram a classe
+    const buttons = document.querySelectorAll(".images button")
+    buttons.forEach(removeActiveClass)
+
+    function removeActiveClass(button) {
+        button.classList.remove("active")
+    }
+    //selecinar a imagem clicada
+    const image = button.children[0]
+    const imageContainer = document.querySelector(".orphanege-detials > img")
+    // atualizar o conteiner de imagem 
+    imageContainer.src = image.src;
+    // adiconar a classe .active para o botão que foi clicado
+    button.classList.add("active");
+}
