@@ -55,6 +55,9 @@
 
             <div class="map-conteiner">
               <div id="mapid"></div>
+              <!-- inputs escondidos -->
+              <input type="hidden" name="lat" />
+              <input type="hidden" name="lng" />
               <footer>
                 <a href="#" id="select-point">
                   Clique no mapa para adicionar a localização
@@ -64,7 +67,7 @@
 
             <div class="input-block">
               <label for="name">Nome</label>
-              <input id="name" name="name" type="text" required/>
+              <input id="name" name="name" type="text" required />
             </div>
 
             <div class="input-block">
@@ -84,30 +87,43 @@
               <label for="images">Foto</label>
               <div class="images-upload" id="images">
                 <div class="new-upload">
-                  <input name="images" placeholder="Cole o link da foto aqui" required />
-                  <span
+                  <input
+                    name="images"
+                    placeholder="Cole o link da foto aqui"
+                    required
+                  />
+                  <span onclick="deleteField(event)"
                     ><img
                       src="./public/images/remove-file.svg"
                       alt="Remover Foto"
                   /></span>
                 </div>
               </div>
-              <button type="button">
+              <button type="button" onclick="addPhotoField()">
                 <img src="./public/images/add-file.svg" alt="Nova Imagem" />
               </button>
             </div>
           </fieldset>
           <!-- 2º Bloco do formulário -->
-          <fieldset> 
+          <fieldset>
             <legend>Visitação</legend>
             <div class="input-block">
               <label for="instructions">Instruções</label>
               <!-- campo de texto com mais linhas -->
-              <textarea name="instructions" id="instructions"required></textarea>
+              <textarea
+                name="instructions"
+                id="instructions"
+                required
+              ></textarea>
             </div>
             <div class="input-block">
               <label for="opening_hours">Horário das visistas</label>
-              <input id="opening_hours" name="opening_hours" type="text" required/>
+              <input
+                id="opening_hours"
+                name="opening_hours"
+                type="text"
+                required
+              />
             </div>
 
             <div class="input-block">
