@@ -73,3 +73,21 @@ function deleteField(event) {
     span.parentNode.remove();
 
 }
+
+// selecionar sim ou não
+function toggleSelect(event){
+    // retirar a classe .active no botão clicado
+    document.querySelectorAll('.button-select button')
+    .forEach(function(button) {
+        button.classList.remove('active')
+    })
+
+    // colocar a classe .active no botão clicado
+    const button = event.currentTarget
+    button.classList.add('active');
+
+    // atualizar o meu input hidden com o valor selecionado
+    const input = document.querySelector('[name="open_on_weeksends"]')
+
+    input.value = button.dataset.value
+}
