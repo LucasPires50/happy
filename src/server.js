@@ -1,6 +1,7 @@
 // [require] -> chama/importar as depedências 
 const express = require('express');
 const path = require('path');
+const pages = require('./pages.js')
 
 // iniciando o express(biblioteca)
 const server = express();
@@ -10,11 +11,12 @@ server
     .use(express.static('public'))
     //configurar template engine
     .set('views', path.join(__dirname, 'views'))
-    .set('views engine', 'hbs')
-    // criar uma rota 
-    .get('/', (request, response) => {
-        return response.render('index')
-    })
+    .set('view engine', 'hbs')
+    // rotas da aplicação 
+    .get('/', pages.index)
+    .get('/orphanage', pages.orphanage)
+    .get('/orphanages', pages.orphanages)
+    .get('/create-orphanage', pages.createOrphanage)
 
 // ligar o servidor 
 server.listen(5590)
